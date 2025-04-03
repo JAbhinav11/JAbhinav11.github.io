@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Abhinav Jaiswal - Portfolio</title>
+    <meta name="title" content="Abhinav Jaiswal - Portfolio">
+    <meta name="description" content="Portfolio of Abhinav Jaiswal, Software Engineer at Amazon based in Bangalore, India. Skilled in system design, full-stack development, and cloud computing.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iAbhinav.me/">
+    <meta property="og:title" content="Abhinav Jaiswal - Portfolio">
+    <meta property="og:description" content="Explore the work, experience, and projects of Abhinav Jaiswal, a Software Engineer at Amazon.">
+    <meta property="og:image" content="https://iAbhinav.me/bundles/images/jabhinav11_pic.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="./bundles/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="bundles/css/styles.css">
+    <link rel="icon" href="./bundles/images/favicon-title.ico" type="image/x-icon">
+
+    <script src="bundles/scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-left dancing-script-head">
+            <a href="https://iAbhinav.me/" style="text-decoration:none; color:inherit;"><h1>Abhinav Jaiswal</h1></a>
+        </div>
+        <nav>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i> <!-- Hamburger Icon -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showPage('home'); return false;">Home</a></li>
+                <li><a href="#about" onclick="showPage('about'); return false;">About</a></li>
+                <li><a href="#skills" onclick="showPage('skills'); return false;">Skills</a></li>
+                <li><a href="#projects" onclick="showPage('projects'); return false;">Projects</a></li>
+                <li><a href="#contact" onclick="showPage('contact'); return false;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="home-intro">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Hi, I'm Abhinav Jaiswal, a passionate Software Engineer based in Bangalore, India. With a deep interest in programming, web development, and technology, I have been honing my skills and gaining experience in solving complex problems and building scalable systems.</p>
+                <p>I hold a postgraduate degree from the National Institute of Technology, Tiruchirappalli, and have worked at Amazon as a Software Development Engineer (SDE) since 2018. My passion for continuous learning drives me to stay up-to-date with the latest technologies and frameworks in the industry.</p>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="about-content">
+                <div class="about-photo">
+                    <img src="bundles/images/jabhinav11_pic.jpg" alt="Abhinav Jaiswal">
+                </div>
+                <div class="about-details">
+                    <h2>About Me</h2>
+                    <p>I am a Software Engineer based in Bangalore, India, with over 6 years of professional experience in software development. My career began as a Software Development Engineer Intern at Amazon, and since 2018, I've been a full-time SDE working on large-scale systems.</p>
+                    <h3>Education</h3>
+                    <ul>
+                        <li>Undergraduate: YSM CVS Ranchi</li>
+                        <li>Postgraduate: National Institute of Technology, Tiruchirappalli</li>
+                    </ul>
+                    <h3>Experience</h3>
+                    <ul>
+                        <li>SDE Intern at Amazon (Jan 2018 - Jun 2018)</li>
+                        <li>Software Development Engineer at Amazon (Jun 2018 - Present)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Page -->
+        <section id="skills" class="page">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Data Structures</h3>
+                    <p>Advanced knowledge of various data structures including arrays, linked lists, trees, and graphs.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Algorithms</h3>
+                    <p>Expertise in designing efficient algorithms, including sorting, searching, and dynamic programming.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>System Design</h3>
+                    <p>Hands-on experience in designing scalable systems, microservices, and cloud architectures.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Java, C++, C</h3>
+                    <p>Proficient in Java, C++, and C, with extensive experience in writing clean, maintainable code.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Web Technologies</h3>
+                    <p>Experienced in developing full-stack web applications using HTML, CSS, JavaScript, Node.js, React, and more.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud & AWS</h3>
+                    <p>Experience with cloud computing services, particularly Amazon AWS, and designing cloud-native applications.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Page -->
+        <section id="projects" class="page">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Adaventure 2017</h3>
+                    <p>An online coding web application to judge code submitted by participants, organised under Pragyan’17</p>
+                    <p>Technology Stack: HTML, Javascript, PHP, MySQL, Unity</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Version’16</h3>
+                    <p>Android application for event Version’16 (A National Level MCA Technical Symposium)</p>
+                    <p>Technology Stack: Java, XML, Android, Google Maps API</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <h2>Contact Me</h2>
+            <div class="contact-container">
+                <p>Feel free to connect with me on social media!</p>
+                <div class="social-buttons">
+                    <a href="https://www.linkedin.com/in/JAbhinav11/" class="social-button linkedin" target="_blank"> <i class="fa fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.facebook.com/JAbhinav11/" class="social-button facebook" target="_blank"> <i class="fa fa-facebook"></i> Facebook</a>
+                    <a href="https://www.instagram.com/JAbhinav11/" class="social-button instagram" target="_blank"> <i class="fa fa-instagram"></i> Instagram</a>
+                    <a href="https://x.com/JAbhinav11/" class="social-button twitter" target="_blank"> <i class="fa fa-twitter"></i> X (Twitter)</a>
+                    <a href="https://github.com/JAbhinav11/" class="social-button github" target="_blank"> <i class="fa fa-github"></i> GitHub</a>
+                </div>
+                <div class="email-section">
+                    <p>Or contact me via email at:</p>
+                    <a href="mailto:hello@iabhinav.me" class="email-link">
+                        <i class="fa fa-envelope"></i> hello@iabhinav.me
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Abhinav Jaiswal | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
