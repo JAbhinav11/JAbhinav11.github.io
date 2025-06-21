@@ -1,0 +1,14 @@
+[
+  { "name": "Java", "value": 85 },
+  { "name": "Data Structure", "value": 80 },
+  { "name": "Algorithms", "value": 80 },
+  { "name": "System Design", "value": 70 },
+  { "name": "API Development", "value": 90 },
+  { "name": "Web Technology", "value": 60 },
+  { "name": "Microservices", "value": 80 },
+  { "name": "Amazon AWS", "value": 80 },
+  { "name": "Git / GitHub", "value": 90 },
+  { "name": "Full-stack", "value": 70 },
+  { "name": "C/C++", "value": 90 },
+  { "name": "Blockchain", "value": 10 }
+]

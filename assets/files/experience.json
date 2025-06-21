@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Software Development Engineer II",
+    "company": "Amazon Development Centre",
+    "duration": "Oct 2022 — Present",
+    "points": [
+      "Led large-scale product classification with high accuracy and system reliability. Built a scalable platform handling 2,000+ TPS. Delivered projects with cross-functional teams, ensuring regulatory compliance. Managed resources and timelines effectively, consistently meeting deadlines. Strengthened team skills through code reviews and mentoring junior engineers."
+    ]
+  },
+  {
+    "title": "Software Development Engineer I",
+    "company": "Amazon Development Centre",
+    "duration": "Jul 2018 — Sep 2022",
+    "points": [
+      "Optimized service and fleet data to reduce costs, developed a preregistration system to streamline onboarding, and implemented a two-tier caching architecture to improve reliability. Built a real-time service metrics web app using Java Spring MVC with an intuitive frontend."
+    ]
+  },
+  {
+    "title": "SDE Intern",
+    "company": "Amazon Development Centre",
+    "duration": "Jan 2018 — Jun 2018",
+    "points": [
+      "➤ Created a web application using Java Spring MVC and an intuitive frontend to analyze service metrics in real-time.",
+      "➤ Automated the assignment of investigation tasks to engineers by detecting anomalies, enhanced response times."
+    ]
+  }
+]

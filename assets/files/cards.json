@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Abhinav",
+    "image": "/assets/images/jabhinav11_pic.jpg",
+    "text": "Capturing a moment in the life of Abhinav."
+  },
+  {
+    "title": "Beaches",
+    "image": "https://i.postimg.cc/Qd7v6JbM/IMG-6934.jpg",
+    "text": "Golden sands and waves under the coastal sun."
+  },
+  {
+    "title": "Trees",
+    "image": "https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?auto=compress&fit=crop&w=1199&h=799&q=80",
+    "text": "A quiet forest bursting with vibrant green life."
+  },
+  {
+    "title": "Lakes",
+    "image": "https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?auto=compress&fit=crop&w=1199&h=811&q=80",
+    "text": "Peaceful lake framed by clouds and mountain air."
+  }
+]
