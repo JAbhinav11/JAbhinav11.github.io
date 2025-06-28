@@ -2291,6 +2291,14 @@ footer {
     height: 230px;
   }
 
+  .form-btn {
+    margin-top: -17px;
+  }
+
+  .contact-form p {
+    margin-bottom: 0px;
+  }
+
   .footer {
     display: block;
   }
