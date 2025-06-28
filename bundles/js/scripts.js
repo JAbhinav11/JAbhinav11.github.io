@@ -362,19 +362,30 @@ for (let i = 0; i < filterBtn.length; i++) {
 const dataForm = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
+const emailInput = dataForm.querySelector('input[type="email"]');
 
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-    // check form validation
-    if (dataForm.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-  });
+// Function to check overall form validity
+function validateForm() {
+  const allFieldsFilled = Array.from(formInputs).every(input => input.value.trim() !== "");
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const isEmailValid = emailPattern.test(emailInput.value);
+
+  if (allFieldsFilled && isEmailValid) {
+    formBtn.removeAttribute("disabled");
+  } else {
+    formBtn.setAttribute("disabled", "");
+  }
 }
 
+// Add input event listener to each form input
+formInputs.forEach(input => {
+  input.addEventListener("input", validateForm);
+});
+
+// Initial validation on page load
+validateForm();
+
+// Handle form submission
 const form = document.getElementById("contact-form");
 const button = form.querySelector("button");
 
@@ -388,11 +399,8 @@ form.addEventListener("submit", function (e) {
     grecaptcha.execute("6LfdbHArAAAAAPeDLaw6tVOunsir0DJs14gteGKi", { action: "submit" }).then(async function (token) {
       const formData = new FormData(form);
 
-      // Append deviceType
       const isMobile = /Mobile|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       formData.append("deviceType", isMobile ? "Mobile" : "Desktop");
-
-      // Optionally include reCAPTCHA token (not used in Apps Script)
       formData.append("g-recaptcha-response", token);
 
       try {
@@ -404,6 +412,7 @@ form.addEventListener("submit", function (e) {
         if (response.ok) {
           alert("Thank you! Your message has been sent.");
           form.reset();
+          validateForm(); // Re-check form after reset
         } else {
           alert("Error: Could not send form.");
         }
@@ -417,6 +426,7 @@ form.addEventListener("submit", function (e) {
     });
   });
 });
+
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");

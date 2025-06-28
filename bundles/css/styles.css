@@ -1495,6 +1495,30 @@ textarea.form-input::-webkit-resizer {
   background: var(--bg-gradient-jet);
 }
 
+.contact-form p {
+  font-size: 0.75rem;
+  opacity: 0.3;
+  color: var(--white-2);
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.contact-form a {
+  color: var(--sky-blue-crayola); /* Or your preferred link color */
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.contact-form p a {
+  display: inline;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
 /*--- Gallery card ---*/
 
 .container {
@@ -1608,6 +1632,61 @@ textarea.form-input::-webkit-resizer {
   margin: 0px 0px 30px 0px;
   text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
 }
+
+footer {
+  display: none;
+  position: relative;
+  height: 40px;
+  width: 100%;
+  background-color: #333333;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  max-width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+  white-space: nowrap; /* Prevent buttons from wrapping */
+  margin: 0;
+}
+
+.toolBtn {
+  color: var(--white-1);
+  background: var(--onyx);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  width: max-content;
+  padding: 8px 8px; /* Increased padding for better visual balance */
+  border-radius: 8px;
+  display: flex;
+  align-items: center; /* This centers items on the cross axis */
+  gap: 0.5rem;
+  flex-direction: row-reverse;
+  line-height: 1; /* This ensures text height matches icon */
+}
+
+.toolBtn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em; /* Make icon size relative to font size */
+  height: 1em; /* Make icon size relative to font size */
+  flex-shrink: 0; /* Prevents icon from shrinking */
+}
+
+.toolBtn .icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 
 /*-----------------------------------*\
   #RESPONSIVE
@@ -2211,6 +2290,10 @@ textarea.form-input::-webkit-resizer {
   .blog-banner-box {
     height: 230px;
   }
+
+  .footer {
+    display: block;
+  }
 }
 
 /**
@@ -2350,56 +2433,4 @@ textarea.form-input::-webkit-resizer {
   .timeline-text {
     max-width: 700px;
   }
-}
-
-footer {
-  position: relative;
-  height: 40px;
-  width: 100%;
-  background-color: #333333;
-  text-align: center;
-  color: #fff;
-  font-size: 0.9em;
-  padding: 10px;
-}
-
-.buttonContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
-  max-width: 100%;
-  overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
-  white-space: nowrap; /* Prevent buttons from wrapping */
-  margin: 0;
-}
-.toolBtn {
-  color: var(--white-1);
-  background: var(--onyx);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-  width: max-content;
-  padding: 8px 8px; /* Increased padding for better visual balance */
-  border-radius: 8px;
-  display: flex;
-  align-items: center; /* This centers items on the cross axis */
-  gap: 0.5rem;
-  flex-direction: row-reverse;
-  line-height: 1; /* This ensures text height matches icon */
-}
-
-.toolBtn .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1em; /* Make icon size relative to font size */
-  height: 1em; /* Make icon size relative to font size */
-  flex-shrink: 0; /* Prevents icon from shrinking */
-}
-
-.toolBtn .icon svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
