@@ -7,106 +7,106 @@ const elementToggleFunc = function (elem) {
 const frameworksLanguagesExpertiseButtons = [
   {
     name: "Flutter",
-    icon: "./assets/images/svg/flutter.svg",
+    icon: "./bundles/images/svg/flutter.svg",
   },
   {
     name: "Dart",
-    icon: "./assets/images/svg/dart.svg",
+    icon: "./bundles/images/svg/dart.svg",
   },
   {
     name: "FlutterFlow",
-    icon: "./assets/images/svg/flutterflow.svg",
+    icon: "./bundles/images/svg/flutterflow.svg",
   },
   {
     name: "Android Native",
-    icon: "./assets/images/svg/android.svg",
+    icon: "./bundles/images/svg/android.svg",
   },
   {
     name: "Kotlin",
-    icon: "./assets/images/svg/kotlin.svg",
+    icon: "./bundles/images/svg/kotlin.svg",
   },
   {
     name: "iOS Native",
-    icon: "./assets/images/svg/iOS.png",
+    icon: "./bundles/images/svg/iOS.png",
   },
   {
     name: "TypeScript",
-    icon: "./assets/images/svg/typeScript.svg",
+    icon: "./bundles/images/svg/typeScript.svg",
   },
   {
     name: "JavaScript",
-    icon: "./assets/images/svg/javascript.svg",
+    icon: "./bundles/images/svg/javascript.svg",
   },
 ];
 
 const paymentGatewayExpertiseButtons = [
   {
     name: "Razorpay",
-    icon: "./assets/images/svg/razorpay.png",
+    icon: "./bundles/images/svg/razorpay.png",
   },
   {
     name: "Stripe",
-    icon: "./assets/images/svg/stripe.svg",
+    icon: "./bundles/images/svg/stripe.svg",
   },
   {
     name: "In App Purchase",
-    icon: "./assets/images/svg/iap.svg",
+    icon: "./bundles/images/svg/iap.svg",
   },
   {
     name: "Braintree",
-    icon: "./assets/images/svg/braintree.svg",
+    icon: "./bundles/images/svg/braintree.svg",
   },
   {
     name: "Google Pay",
-    icon: "./assets/images/svg/google-pay.svg",
+    icon: "./bundles/images/svg/google-pay.svg",
   },
 ];
 const apiServicesExpertiseButtons = [
   {
     name: "REST API",
-    icon: "./assets/images/svg/api.svg",
+    icon: "./bundles/images/svg/api.svg",
   },
   {
     name: "GraphQL",
-    icon: "./assets/images/svg/graphql.svg",
+    icon: "./bundles/images/svg/graphql.svg",
   },
 ];
 const uiUXToolsExpertiseButtons = [
   {
     name: "Figma",
-    icon: "./assets/images/svg/figma.svg",
+    icon: "./bundles/images/svg/figma.svg",
   },
   {
     name: "Framer",
-    icon: "./assets/images/svg/framer.svg",
+    icon: "./bundles/images/svg/framer.svg",
   },
   {
     name: "Whimsical",
-    icon: "./assets/images/svg/whimsical.jpg",
+    icon: "./bundles/images/svg/whimsical.jpg",
   },
 ];
 const unitTestingExpertiseButtons = [
   {
     name: "Widget Tests",
-    icon: "./assets/images/svg/widget.png",
+    icon: "./bundles/images/svg/widget.png",
   },
   {
     name: "Unit Tests",
-    icon: "./assets/images/svg/unit-testing.png",
+    icon: "./bundles/images/svg/unit-testing.png",
   },
   {
     name: "Integration Tests",
-    icon: "./assets/images/svg/integration-testing.webp",
+    icon: "./bundles/images/svg/integration-testing.webp",
   },
 ];
 const upgradeServicesExpertiseButtons = [
   {
     name: "Puro",
-    icon: "./assets/images/svg/puro.png",
+    icon: "./bundles/images/svg/puro.png",
   },
   {
     name: "FVM",
-    icon: "./assets/images/svg/fvm.svg",
+    icon: "./bundles/images/svg/fvm.svg",
   },
 ];
 const deploymentProcessExpertiseButtons = [
@@ -118,179 +118,179 @@ const deploymentProcessExpertiseButtons = [
 const stateManagementExpertiseButtons = [
   {
     name: "Provider",
-    icon: "./assets/images/svg/provider.png",
+    icon: "./bundles/images/svg/provider.png",
   },
   {
     name: "BLoC",
-    icon: "./assets/images/svg/bloc.png",
+    icon: "./bundles/images/svg/bloc.png",
   },
   {
     name: "GetX",
-    icon: "./assets/images/svg/getx.png",
+    icon: "./bundles/images/svg/getx.png",
   },
   {
     name: "Riverpod",
-    icon: "./assets/images/svg/riverpod.svg",
+    icon: "./bundles/images/svg/riverpod.svg",
   },
 ];
 const projectManagementToolsExpertiseButtons = [
   {
     name: "asana",
-    icon: "./assets/images/svg/asana.svg",
+    icon: "./bundles/images/svg/asana.svg",
   },
   {
     name: "Slack",
-    icon: "./assets/images/svg/slack.svg",
+    icon: "./bundles/images/svg/slack.svg",
   },
   {
     name: "Jira",
-    icon: "./assets/images/svg/jira.svg",
+    icon: "./bundles/images/svg/jira.svg",
   },
   {
     name: "Trello",
-    icon: "./assets/images/svg/trello.svg",
+    icon: "./bundles/images/svg/trello.svg",
   },
 ];
 const crashReportingExpertiseButtons = [
   {
     name: "Firebase Crashlytics",
-    icon: "./assets/images/svg/firebase-crashlytics.png",
+    icon: "./bundles/images/svg/firebase-crashlytics.png",
   },
   {
     name: "Sentry",
-    icon: "./assets/images/svg/sentry.svg",
+    icon: "./bundles/images/svg/sentry.svg",
   },
 ];
 const deploymentExpertiseButtons = [
   {
     name: "Google Play Stroe",
-    icon: "./assets/images/svg/google-play.png",
+    icon: "./bundles/images/svg/google-play.png",
   },
   {
     name: "App Stroe",
-    icon: "./assets/images/svg/app-store.svg",
+    icon: "./bundles/images/svg/app-store.svg",
   },
   {
     name: "Web",
-    icon: "./assets/images/svg/web.svg",
+    icon: "./bundles/images/svg/web.svg",
   },
   {
     name: "Microsoft Store",
-    icon: "./assets/images/svg/microsoft-store.png",
+    icon: "./bundles/images/svg/microsoft-store.png",
   },
   {
     name: "Linux",
-    icon: "./assets/images/svg/linux.svg",
+    icon: "./bundles/images/svg/linux.svg",
   },
 ];
 const codeReviewExpertiseButtons = [
   {
     name: "Flutter Analyze",
-    icon: "./assets/images/svg/flutter-analyze.svg",
+    icon: "./bundles/images/svg/flutter-analyze.svg",
   },
   {
     name: "Effective Dart-Default IDE Static Analysis",
-    icon: "./assets/images/svg/code-Effective.png",
+    icon: "./bundles/images/svg/code-Effective.png",
   },
   {
     name: "pana",
-    icon: "./assets/images/svg/pana.png",
+    icon: "./bundles/images/svg/pana.png",
   },
 ];
 const databaseExpertiseButtons = [
   {
     name: "Local Storage",
-    icon: "./assets/images/svg/local-database.png",
+    icon: "./bundles/images/svg/local-database.png",
   },
   {
     name: "Sqlite",
-    icon: "./assets/images/svg/sqlite.svg",
+    icon: "./bundles/images/svg/sqlite.svg",
   },
   {
     name: "Firebase Firestore",
-    icon: "./assets/images/svg/firebase-firestore.png",
+    icon: "./bundles/images/svg/firebase-firestore.png",
   },
   {
     name: "Firebase realtime database",
-    icon: "./assets/images/svg/firebase-realtime.png",
+    icon: "./bundles/images/svg/firebase-realtime.png",
   },
   {
     name: "Supabase",
-    icon: "./assets/images/svg/supabase.svg",
+    icon: "./bundles/images/svg/supabase.svg",
   },
   {
     name: "Hive",
-    icon: "./assets/images/svg/hive.png",
+    icon: "./bundles/images/svg/hive.png",
   },
   {
     name: "ObjectBox",
-    icon: "./assets/images/svg/objectbox.png",
+    icon: "./bundles/images/svg/objectbox.png",
   },
 ];
 const versionControlExpertiseButtons = [
   {
     name: "Git",
-    icon: "./assets/images/svg/git.svg",
+    icon: "./bundles/images/svg/git.svg",
   },
   {
     name: "Github",
-    icon: "./assets/images/svg/github.svg",
+    icon: "./bundles/images/svg/github.svg",
   },
   {
     name: "BitBucket",
-    icon: "./assets/images/svg/bitbucket.svg",
+    icon: "./bundles/images/svg/bitbucket.svg",
   },
 ];
 const tootlUtilitiesExpertiseButtons = [
   {
     name: "Android Studio",
-    icon: "./assets/images/svg/android-studio.svg",
+    icon: "./bundles/images/svg/android-studio.svg",
   },
   {
     name: "Visual Studio Code",
-    icon: "./assets/images/svg/visual-studio-code.svg",
+    icon: "./bundles/images/svg/visual-studio-code.svg",
   },
   {
     name: "XCode",
-    icon: "./assets/images/svg/xcode.svg",
+    icon: "./bundles/images/svg/xcode.svg",
   },
   {
     name: "Postman",
-    icon: "./assets/images/svg/postman-icon.svg",
+    icon: "./bundles/images/svg/postman-icon.svg",
   },
 ];
 const plugnisExpertiseButtons = [
   {
     name: "Firebase",
-    icon: "./assets/images/svg/firebase.svg",
+    icon: "./bundles/images/svg/firebase.svg",
   },
   {
     name: "OneSignal Notifications",
-    icon: "./assets/images/svg/onesignal.svg",
+    icon: "./bundles/images/svg/onesignal.svg",
   },
   {
     name: "In-App-Purchase",
-    icon: "./assets/images/svg/iap.svg",
+    icon: "./bundles/images/svg/iap.svg",
   },
   {
     name: "Google Map",
-    icon: "./assets/images/svg/google-map.svg",
+    icon: "./bundles/images/svg/google-map.svg",
   },
   {
     name: "Social Login",
-    icon: "./assets/images/svg/social-login.png",
+    icon: "./bundles/images/svg/social-login.png",
   },
   {
     name: "Notifications",
-    icon: "./assets/images/svg/notification.png",
+    icon: "./bundles/images/svg/notification.png",
   },
   {
     name: "Injectable",
-    icon: "./assets/images/svg/injectable.svg",
+    icon: "./bundles/images/svg/injectable.svg",
   },
   {
     name: "Json Serializable",
-    icon: "./assets/images/svg/json.svg",
+    icon: "./bundles/images/svg/json.svg",
   },
 ];
 
@@ -475,9 +475,9 @@ function hidePopup() {
 
 async function loadResumeData() {
  const [experienceRes, skillsRes, educationRes] = await Promise.all([
-     fetch('/assets/files/experience.json'),
-     fetch('/assets/files/skills.json'),
-     fetch('/assets/files/education.json')
+     fetch('/bundles/files/experience.json'),
+     fetch('/bundles/files/skills.json'),
+     fetch('/bundles/files/education.json')
  ]);
 
 
@@ -563,7 +563,7 @@ function renderSkills(skills) {
 document.addEventListener('DOMContentLoaded', loadResumeData);
 
 // load the cards in gallery
-fetch('/assets/files/cards.json')
+fetch('/bundles/files/cards.json')
     .then(response => response.json())
     .then(cardsData => {
       const container = document.getElementById('cardContainer');
