@@ -1,57 +1,57 @@
 const virtualRefTechStackToolsButtons = [
   {
     name: "Flutter",
-    icon: "../assets/images/svg/flutter.svg",
+    icon: "../bundles/images/svg/flutter.svg",
   },
   {
     name: "Dart",
-    icon: "../assets/images/svg/dart.svg",
+    icon: "../bundles/images/svg/dart.svg",
   },
   {
     name: "TensorFlow",
-    icon: "../assets/images/svg/tensorflow.png",
+    icon: "../bundles/images/svg/tensorflow.png",
   },
   {
     name: "Google ML Kit",
-    icon: "../assets/images/svg/google-ml-kit.png",
+    icon: "../bundles/images/svg/google-ml-kit.png",
   },
   {
     name: "Figma",
-    icon: "../assets/images/svg/figma.svg",
+    icon: "../bundles/images/svg/figma.svg",
   },
   {
     name: "Whimsical",
-    icon: "../assets/images/svg/whimsical.jpg",
+    icon: "../bundles/images/svg/whimsical.jpg",
   },
 ];
 const tulagramTechStackToolsButtons = [
   {
     name: "Figma",
-    icon: "../assets/images/svg/figma.svg",
+    icon: "../bundles/images/svg/figma.svg",
   },
   {
     name: "Flutter",
-    icon: "../assets/images/svg/flutter.svg",
+    icon: "../bundles/images/svg/flutter.svg",
   },
   {
     name: "Dart",
-    icon: "../assets/images/svg/dart.svg",
+    icon: "../bundles/images/svg/dart.svg",
   },
   {
     name: "Provider",
-    icon: "../assets/images/svg/provider.png",
+    icon: "../bundles/images/svg/provider.png",
   },
   {
     name: "REST API",
-    icon: "../assets/images/svg/api.svg",
+    icon: "../bundles/images/svg/api.svg",
   },
   {
     name: "Social Login",
-    icon: "../assets/images/svg/social-login.png",
+    icon: "../bundles/images/svg/social-login.png",
   },
   {
     name: "In App Purchase",
-    icon: "../assets/images/svg/iap.svg",
+    icon: "../bundles/images/svg/iap.svg",
   },
 ];
 // function populateButtons(list, containerId) {
