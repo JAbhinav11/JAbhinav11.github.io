@@ -531,10 +531,13 @@ main {
 .social-item .social-link {
   color: var(--light-gray-70);
   font-size: 18px;
+  transition: transform 0.5s ease, fill 0.5s ease;
 }
 
-.social-item .social-link:hover {
-  color: var(--light-gray);
+.social-link:hover svg {
+  fill: var(--sky-blue-crayola);
+  transform: scale(1.1);
+  transition: transform 0.5s ease, fill 0.5s ease;
 }
 
 /*-----------------------------------*\
