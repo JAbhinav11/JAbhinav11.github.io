@@ -404,7 +404,7 @@ form.addEventListener("submit", function (e) {
       formData.append("g-recaptcha-response", token);
 
       try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbxuDjk9GOood5KzwZx5iolj6D22S3EBfZSVG0TyHEu-6i6hycHorfg3C7DHHJRB-_OX/exec", {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbzY44QUQgMtOanfoBLAMjiqxFJm8rqBdFseUkwOpR_nItUX5LQ0j9mcx4L_pZgo33o2/exec", {
           method: "POST",
           body: formData
         });
