@@ -439,7 +439,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
@@ -482,7 +482,9 @@ function hidePopup() {
   popup.classList.remove('show');
 }
 
-
+/**
+ * Function to load resume data
+ */
 async function loadResumeData() {
  const [experienceRes, skillsRes, educationRes] = await Promise.all([
      fetch('/bundles/files/experience.json'),
@@ -501,8 +503,8 @@ async function loadResumeData() {
 }
 
 function renderExperience(experiences) {
-  const timelineList = document.querySelector('.timeline-list');
-  timelineList.innerHTML = '';
+  const experienceList = document.querySelector('.experience-list');
+  experienceList.innerHTML = '';
 
   experiences.forEach(exp => {
     const item = document.createElement('li');
@@ -523,7 +525,7 @@ function renderExperience(experiences) {
       </ul>
     `;
 
-    timelineList.appendChild(item);
+    experienceList.appendChild(item);
   });
 }
 
