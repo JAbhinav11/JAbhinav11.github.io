@@ -472,14 +472,34 @@ const currentYear = new Date().getFullYear();
 const experienceYears = currentYear - startYear;
 document.getElementById("experience-years").textContent = `+${experienceYears}`;
 
-// display popup image
-const thumbnail = document.getElementById('thumbnail');
-const popup = document.getElementById('popup');
-thumbnail.addEventListener('click', () => {
-  popup.classList.add('show');
+//// display popup image
+//const thumbnail = document.getElementById('thumbnail');
+//const popup = document.getElementById('popup');
+//thumbnail.addEventListener('click', () => {
+//  popup.classList.add('show');
+//});
+//function hidePopup() {
+//  popup.classList.remove('show');
+//}
+
+// Generic image popup logic
+const popup = document.getElementById("popup");
+const popupImg = popup.querySelector("img");
+
+document.addEventListener("click", function (e) {
+  const target = e.target;
+  if (target.matches("[data-popup-image]")) {
+    const src = target.getAttribute("src");
+    popupImg.setAttribute("src", src);
+    popup.classList.add("show");
+  }
 });
+
 function hidePopup() {
-  popup.classList.remove('show');
+  popup.classList.remove("show");
+  setTimeout(() => {
+    popupImg.removeAttribute("src");
+  }, 500); // Delay before clearing image
 }
 
 /**

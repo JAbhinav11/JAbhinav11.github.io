@@ -111,7 +111,7 @@
     <main>
       <!--- #SIDEBAR -->
       <div id="popup" onclick="hidePopup()">
-        <img src="/bundles/images/jabhinav11_pic.jpg" loading="lazy" alt="Abhinav Jaiswal">
+        <img src="" loading="lazy" alt="Abhinav Jaiswal">
       </div>
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
@@ -123,6 +123,7 @@
                  filter:grayscale(10%) saturate(0.9) opacity(0.9); transition:filter 0.5s ease, opacity 0.5s ease;"
                  onmouseover="this.style.filter='none'; this.style.opacity='1';"
                  onmouseout="this.style.filter='grayscale(20%) saturate(0.8) opacity(0.9)';"
+                 data-popup-image
             />
           </figure>
           <div class="info-content courgette-head">
@@ -713,23 +714,67 @@
               </iframe>
             </figure>
           </section>
-          <section class="contact-form">
-            <h3 class="h3 form-title">Contact Form</h3>
-            <form id="contact-form" class="form" data-form>
-              <div class="input-wrapper">
-                <input type="text" name="name" class="form-input" placeholder="Full Name" required data-form-input/>
-                <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input/>
-              </div>
-              <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-              <p> This site is protected by reCAPTCHA and the Google
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and
-                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.
-              </p>
-              <button class="form-btn" type="submit" disabled data-form-btn>
-                <ion-icon name="paper-plane"></ion-icon>
-                <span>Send Message</span>
-              </button>
-            </form>
+
+          <section class="contact-details-wrapper">
+            <div class="contact-details">
+              <h3 class="h3">Contact Details</h3>
+
+              <ul class="contact-info-list">
+                <li>
+                  <div class="icon-box"><ion-icon name="call-outline"></ion-icon></div>
+                  <div>
+                    <h5 class="h5">Phone</h5>
+                    <p class="contact-text">+91 97090 83123</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+                  <div>
+                    <h5 class="h5">Email</h5>
+                    <p class="contact-text">hello@iabhinav.me</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="qr-box">
+              <img
+                      src="/bundles/images/vcard-qr.jpg"
+                      alt="vCard QR Code"
+                      class="qr-image desktop-only"
+                      style="box-shadow: 7px 7px 7px rgba(0, 0, 0, 1);"
+                      data-popup-image
+              >
+
+              <a href="/bundles/files/vcard/my_vcard.vcf" download>
+                <img
+                        src="/bundles/images/vcard-downloader.png"
+                        alt="vCard Downloader"
+                        class="qr-image mobile-only"
+                        style="box-shadow: 3px 3px 10px rgba(255, 255, 255, 1);"
+                >
+              </a>
+            </div>
+          </section>
+
+          <section class="contact-form-wrapper">
+            <div class="contact-form-box">
+              <h3 class="h3 form-title">Contact Form</h3>
+              <form id="contact-form" class="form" data-form>
+                <div class="input-wrapper">
+                  <input type="text" name="name" class="form-input" placeholder="Full Name" required data-form-input/>
+                  <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input/>
+                </div>
+                <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+                <p> This site is protected by reCAPTCHA and the Google
+                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and
+                  <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.
+                </p>
+                <button class="form-btn" type="submit" disabled data-form-btn>
+                  <ion-icon name="paper-plane"></ion-icon>
+                  <span>Send Message</span>
+                </button>
+              </form>
+            </div>
           </section>
         </article>
 

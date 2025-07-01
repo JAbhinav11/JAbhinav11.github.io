@@ -1498,7 +1498,7 @@ textarea.form-input::-webkit-resizer {
   background: var(--bg-gradient-jet);
 }
 
-.contact-form p {
+.contact-form-wrapper p {
   font-size: 0.75rem;
   opacity: 0.3;
   color: var(--white-2);
@@ -1506,13 +1506,13 @@ textarea.form-input::-webkit-resizer {
   margin-bottom: 20px;
 }
 
-.contact-form a {
-  color: var(--sky-blue-crayola); /* Or your preferred link color */
+.contact-form-wrapper a {
+  color: var(--sky-blue-crayola);
   text-decoration: underline;
   white-space: nowrap;
 }
 
-.contact-form p a {
+.contact-form-wrapper p a {
   display: inline;
   white-space: normal;
   word-break: break-word;
@@ -1522,7 +1522,93 @@ textarea.form-input::-webkit-resizer {
     visibility: hidden;
 }
 
-/*--- Gallery card ---*/
+.contact-form-wrapper {
+  margin-bottom: 10px;
+}
+
+.contact-form-box {
+  background: var(--eerie-black-2);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--jet);
+  box-shadow: var(--shadow-1);
+}
+
+[data-popup-image] {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+[data-popup-image]:hover {
+  transform: scale(1.1);
+}
+
+/*--- Contact details section ---*/
+
+
+.contact-details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--eerie-black-2);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--jet);
+  box-shadow: var(--shadow-1);
+}
+
+.contact-details {
+  flex: 1 1 180px;
+  min-width: 180px;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.contact-info-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white-2);
+}
+
+.contact-text {
+  font-size: var(--fs-6);
+  color: var(--light-gray);
+}
+
+.qr-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-image {
+  width: 140px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+}
+
+.desktop-only {
+  display: none;
+}
+.mobile-only {
+  display: block;
+}
+
+/*-----------------------------------*\
+  #GALLERY
+\*-----------------------------------*/
 
 .container {
   padding: 30px 0px;
@@ -2203,6 +2289,13 @@ footer {
   .form-btn {
     width: max-content;
     margin-left: auto;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+  .mobile-only {
+    display: none;
   }
 }
 
