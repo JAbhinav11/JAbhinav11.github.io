@@ -294,6 +294,10 @@ const plugnisExpertiseButtons = [
   },
 ];
 
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
@@ -592,7 +596,10 @@ function renderSkills(skills) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', loadResumeData);
+document.addEventListener('DOMContentLoaded', function () {
+  window.scrollTo(0, 0);
+  loadResumeData();
+});
 
 // load the cards in gallery
 fetch('/bundles/files/cards.json')
