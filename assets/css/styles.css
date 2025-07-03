@@ -430,7 +430,7 @@ main {
 }
 
 .courgette-head h1 {
-  font-family: "Courgette", cursive;
+  font-family: "Courgette", Comic Sans MS;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -1679,7 +1679,7 @@ textarea.form-input::-webkit-resizer {
 }
 
 .card-info h2 {
-  font-family: "Playfair Display", serif;
+  font-family: Comic Sans MS, Brush Script;
   font-size: 20px;
   font-weight: 700;
   margin: 0px;

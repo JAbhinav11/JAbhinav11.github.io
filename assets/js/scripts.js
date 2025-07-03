@@ -8,106 +8,106 @@ const elementToggleFunc = function (elem) {
 //const frameworksLanguagesExpertiseButtons = [
 //  {
 //    name: "Flutter",
-//    icon: "./bundles/images/svg/flutter.svg",
+//    icon: "./assets/images/svg/flutter.svg",
 //  },
 //  {
 //    name: "Dart",
-//    icon: "./bundles/images/svg/dart.svg",
+//    icon: "./assets/images/svg/dart.svg",
 //  },
 //  {
 //    name: "FlutterFlow",
-//    icon: "./bundles/images/svg/flutterflow.svg",
+//    icon: "./assets/images/svg/flutterflow.svg",
 //  },
 //  {
 //    name: "Android Native",
-//    icon: "./bundles/images/svg/android.svg",
+//    icon: "./assets/images/svg/android.svg",
 //  },
 //  {
 //    name: "Kotlin",
-//    icon: "./bundles/images/svg/kotlin.svg",
+//    icon: "./assets/images/svg/kotlin.svg",
 //  },
 //  {
 //    name: "iOS Native",
-//    icon: "./bundles/images/svg/iOS.png",
+//    icon: "./assets/images/svg/iOS.png",
 //  },
 //  {
 //    name: "TypeScript",
-//    icon: "./bundles/images/svg/typeScript.svg",
+//    icon: "./assets/images/svg/typeScript.svg",
 //  },
 //  {
 //    name: "JavaScript",
-//    icon: "./bundles/images/svg/javascript.svg",
+//    icon: "./assets/images/svg/javascript.svg",
 //  },
 //];
 //
 //const paymentGatewayExpertiseButtons = [
 //  {
 //    name: "Razorpay",
-//    icon: "./bundles/images/svg/razorpay.png",
+//    icon: "./assets/images/svg/razorpay.png",
 //  },
 //  {
 //    name: "Stripe",
-//    icon: "./bundles/images/svg/stripe.svg",
+//    icon: "./assets/images/svg/stripe.svg",
 //  },
 //  {
 //    name: "In App Purchase",
-//    icon: "./bundles/images/svg/iap.svg",
+//    icon: "./assets/images/svg/iap.svg",
 //  },
 //  {
 //    name: "Braintree",
-//    icon: "./bundles/images/svg/braintree.svg",
+//    icon: "./assets/images/svg/braintree.svg",
 //  },
 //  {
 //    name: "Google Pay",
-//    icon: "./bundles/images/svg/google-pay.svg",
+//    icon: "./assets/images/svg/google-pay.svg",
 //  },
 //];
 //const apiServicesExpertiseButtons = [
 //  {
 //    name: "REST API",
-//    icon: "./bundles/images/svg/api.svg",
+//    icon: "./assets/images/svg/api.svg",
 //  },
 //  {
 //    name: "GraphQL",
-//    icon: "./bundles/images/svg/graphql.svg",
+//    icon: "./assets/images/svg/graphql.svg",
 //  },
 //];
 //const uiUXToolsExpertiseButtons = [
 //  {
 //    name: "Figma",
-//    icon: "./bundles/images/svg/figma.svg",
+//    icon: "./assets/images/svg/figma.svg",
 //  },
 //  {
 //    name: "Framer",
-//    icon: "./bundles/images/svg/framer.svg",
+//    icon: "./assets/images/svg/framer.svg",
 //  },
 //  {
 //    name: "Whimsical",
-//    icon: "./bundles/images/svg/whimsical.jpg",
+//    icon: "./assets/images/svg/whimsical.jpg",
 //  },
 //];
 //const unitTestingExpertiseButtons = [
 //  {
 //    name: "Widget Tests",
-//    icon: "./bundles/images/svg/widget.png",
+//    icon: "./assets/images/svg/widget.png",
 //  },
 //  {
 //    name: "Unit Tests",
-//    icon: "./bundles/images/svg/unit-testing.png",
+//    icon: "./assets/images/svg/unit-testing.png",
 //  },
 //  {
 //    name: "Integration Tests",
-//    icon: "./bundles/images/svg/integration-testing.webp",
+//    icon: "./assets/images/svg/integration-testing.webp",
 //  },
 //];
 //const upgradeServicesExpertiseButtons = [
 //  {
 //    name: "Puro",
-//    icon: "./bundles/images/svg/puro.png",
+//    icon: "./assets/images/svg/puro.png",
 //  },
 //  {
 //    name: "FVM",
-//    icon: "./bundles/images/svg/fvm.svg",
+//    icon: "./assets/images/svg/fvm.svg",
 //  },
 //];
 //const deploymentProcessExpertiseButtons = [
@@ -119,179 +119,179 @@ const elementToggleFunc = function (elem) {
 //const stateManagementExpertiseButtons = [
 //  {
 //    name: "Provider",
-//    icon: "./bundles/images/svg/provider.png",
+//    icon: "./assets/images/svg/provider.png",
 //  },
 //  {
 //    name: "BLoC",
-//    icon: "./bundles/images/svg/bloc.png",
+//    icon: "./assets/images/svg/bloc.png",
 //  },
 //  {
 //    name: "GetX",
-//    icon: "./bundles/images/svg/getx.png",
+//    icon: "./assets/images/svg/getx.png",
 //  },
 //  {
 //    name: "Riverpod",
-//    icon: "./bundles/images/svg/riverpod.svg",
+//    icon: "./assets/images/svg/riverpod.svg",
 //  },
 //];
 //const projectManagementToolsExpertiseButtons = [
 //  {
 //    name: "asana",
-//    icon: "./bundles/images/svg/asana.svg",
+//    icon: "./assets/images/svg/asana.svg",
 //  },
 //  {
 //    name: "Slack",
-//    icon: "./bundles/images/svg/slack.svg",
+//    icon: "./assets/images/svg/slack.svg",
 //  },
 //  {
 //    name: "Jira",
-//    icon: "./bundles/images/svg/jira.svg",
+//    icon: "./assets/images/svg/jira.svg",
 //  },
 //  {
 //    name: "Trello",
-//    icon: "./bundles/images/svg/trello.svg",
+//    icon: "./assets/images/svg/trello.svg",
 //  },
 //];
 //const crashReportingExpertiseButtons = [
 //  {
 //    name: "Firebase Crashlytics",
-//    icon: "./bundles/images/svg/firebase-crashlytics.png",
+//    icon: "./assets/images/svg/firebase-crashlytics.png",
 //  },
 //  {
 //    name: "Sentry",
-//    icon: "./bundles/images/svg/sentry.svg",
+//    icon: "./assets/images/svg/sentry.svg",
 //  },
 //];
 //const deploymentExpertiseButtons = [
 //  {
 //    name: "Google Play Stroe",
-//    icon: "./bundles/images/svg/google-play.png",
+//    icon: "./assets/images/svg/google-play.png",
 //  },
 //  {
 //    name: "App Stroe",
-//    icon: "./bundles/images/svg/app-store.svg",
+//    icon: "./assets/images/svg/app-store.svg",
 //  },
 //  {
 //    name: "Web",
-//    icon: "./bundles/images/svg/web.svg",
+//    icon: "./assets/images/svg/web.svg",
 //  },
 //  {
 //    name: "Microsoft Store",
-//    icon: "./bundles/images/svg/microsoft-store.png",
+//    icon: "./assets/images/svg/microsoft-store.png",
 //  },
 //  {
 //    name: "Linux",
-//    icon: "./bundles/images/svg/linux.svg",
+//    icon: "./assets/images/svg/linux.svg",
 //  },
 //];
 //const codeReviewExpertiseButtons = [
 //  {
 //    name: "Flutter Analyze",
-//    icon: "./bundles/images/svg/flutter-analyze.svg",
+//    icon: "./assets/images/svg/flutter-analyze.svg",
 //  },
 //  {
 //    name: "Effective Dart-Default IDE Static Analysis",
-//    icon: "./bundles/images/svg/code-Effective.png",
+//    icon: "./assets/images/svg/code-Effective.png",
 //  },
 //  {
 //    name: "pana",
-//    icon: "./bundles/images/svg/pana.png",
+//    icon: "./assets/images/svg/pana.png",
 //  },
 //];
 //const databaseExpertiseButtons = [
 //  {
 //    name: "Local Storage",
-//    icon: "./bundles/images/svg/local-database.png",
+//    icon: "./assets/images/svg/local-database.png",
 //  },
 //  {
 //    name: "Sqlite",
-//    icon: "./bundles/images/svg/sqlite.svg",
+//    icon: "./assets/images/svg/sqlite.svg",
 //  },
 //  {
 //    name: "Firebase Firestore",
-//    icon: "./bundles/images/svg/firebase-firestore.png",
+//    icon: "./assets/images/svg/firebase-firestore.png",
 //  },
 //  {
 //    name: "Firebase realtime database",
-//    icon: "./bundles/images/svg/firebase-realtime.png",
+//    icon: "./assets/images/svg/firebase-realtime.png",
 //  },
 //  {
 //    name: "Supabase",
-//    icon: "./bundles/images/svg/supabase.svg",
+//    icon: "./assets/images/svg/supabase.svg",
 //  },
 //  {
 //    name: "Hive",
-//    icon: "./bundles/images/svg/hive.png",
+//    icon: "./assets/images/svg/hive.png",
 //  },
 //  {
 //    name: "ObjectBox",
-//    icon: "./bundles/images/svg/objectbox.png",
+//    icon: "./assets/images/svg/objectbox.png",
 //  },
 //];
 //const versionControlExpertiseButtons = [
 //  {
 //    name: "Git",
-//    icon: "./bundles/images/svg/git.svg",
+//    icon: "./assets/images/svg/git.svg",
 //  },
 //  {
 //    name: "Github",
-//    icon: "./bundles/images/svg/github.svg",
+//    icon: "./assets/images/svg/github.svg",
 //  },
 //  {
 //    name: "BitBucket",
-//    icon: "./bundles/images/svg/bitbucket.svg",
+//    icon: "./assets/images/svg/bitbucket.svg",
 //  },
 //];
 //const tootlUtilitiesExpertiseButtons = [
 //  {
 //    name: "Android Studio",
-//    icon: "./bundles/images/svg/android-studio.svg",
+//    icon: "./assets/images/svg/android-studio.svg",
 //  },
 //  {
 //    name: "Visual Studio Code",
-//    icon: "./bundles/images/svg/visual-studio-code.svg",
+//    icon: "./assets/images/svg/visual-studio-code.svg",
 //  },
 //  {
 //    name: "XCode",
-//    icon: "./bundles/images/svg/xcode.svg",
+//    icon: "./assets/images/svg/xcode.svg",
 //  },
 //  {
 //    name: "Postman",
-//    icon: "./bundles/images/svg/postman-icon.svg",
+//    icon: "./assets/images/svg/postman-icon.svg",
 //  },
 //];
 //const plugnisExpertiseButtons = [
 //  {
 //    name: "Firebase",
-//    icon: "./bundles/images/svg/firebase.svg",
+//    icon: "./assets/images/svg/firebase.svg",
 //  },
 //  {
 //    name: "OneSignal Notifications",
-//    icon: "./bundles/images/svg/onesignal.svg",
+//    icon: "./assets/images/svg/onesignal.svg",
 //  },
 //  {
 //    name: "In-App-Purchase",
-//    icon: "./bundles/images/svg/iap.svg",
+//    icon: "./assets/images/svg/iap.svg",
 //  },
 //  {
 //    name: "Google Map",
-//    icon: "./bundles/images/svg/google-map.svg",
+//    icon: "./assets/images/svg/google-map.svg",
 //  },
 //  {
 //    name: "Social Login",
-//    icon: "./bundles/images/svg/social-login.png",
+//    icon: "./assets/images/svg/social-login.png",
 //  },
 //  {
 //    name: "Notifications",
-//    icon: "./bundles/images/svg/notification.png",
+//    icon: "./assets/images/svg/notification.png",
 //  },
 //  {
 //    name: "Injectable",
-//    icon: "./bundles/images/svg/injectable.svg",
+//    icon: "./assets/images/svg/injectable.svg",
 //  },
 //  {
 //    name: "Json Serializable",
-//    icon: "./bundles/images/svg/json.svg",
+//    icon: "./assets/images/svg/json.svg",
 //  },
 //];
 
@@ -512,9 +512,9 @@ function hidePopup() {
  */
 async function loadResumeData() {
  const [experienceRes, skillsRes, educationRes] = await Promise.all([
-     fetch('/bundles/files/experience.json'),
-     fetch('/bundles/files/skills.json'),
-     fetch('/bundles/files/education.json')
+     fetch('/assets/files/json/experience.json'),
+     fetch('/assets/files/json/skills.json'),
+     fetch('/assets/files/json/education.json')
  ]);
 
 
@@ -603,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // load the cards in gallery
-fetch('/bundles/files/cards.json')
+fetch('/assets/files/json/cards.json')
     .then(response => response.json())
     .then(cardsData => {
       const container = document.getElementById('cardContainer');
