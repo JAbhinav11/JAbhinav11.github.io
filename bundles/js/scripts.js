@@ -397,7 +397,7 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   button.disabled = true;
-  button.querySelector("span").textContent = "Sending...";
+  button.querySelector("span").textContent = "Sending . . .";
 
   grecaptcha.ready(function () {
     grecaptcha.execute("6LfdbHArAAAAAPeDLaw6tVOunsir0DJs14gteGKi", { action: "submit" }).then(async function (token) {
