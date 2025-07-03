@@ -32,21 +32,24 @@
     <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
-
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="iAbhinav" />
-    
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#121212"/>
 
-    <!--- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <!--- Preload Fonts -->
+    <link rel="preload" href="/assets/fonts/courgette/courgette-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/fonts/poppins/poppins-v23-latin-300.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/fonts/poppins/poppins-v23-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/fonts/poppins/poppins-v23-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/fonts/poppins/poppins-v23-latin-600.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-    <!--- Styles -->
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <!--- Preload Hero Image -->
+    <link rel="preload" href="/assets/images/abhinav/Abhinav.webp" as="image" type="image/webp">
+
+    <!--- Styles and JS -->
+    <link rel="preload" href="/assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="/assets/js/scripts.min.js" as="script" />
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -772,10 +775,10 @@
               <h3 class="h3 form-title">Contact Form</h3>
               <form id="contact-form" class="form" data-form>
                 <div class="input-wrapper">
-                  <input type="text" name="name" class="form-input" placeholder="Full Name" required data-form-input/>
-                  <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input/>
+                  <input type="text" name="name" class="form-input" placeholder="Full Name" required data-form-input autocomplete="name" />
+                  <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input autocomplete="email" />
                 </div>
-                <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+                <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input autocomplete="off"></textarea>
                 <p> This site is protected by reCAPTCHA and the Google
                   <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and
                   <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.
@@ -802,7 +805,7 @@
     </main>
 
     <!--- custom js link -->
-    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/scripts.min.js" defer></script>
 
     <!--- ionicon link -->
     <script

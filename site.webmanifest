@@ -1,6 +1,10 @@
 {
   "name": "iAbhinav.me",
   "short_name": "iAbhinav",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#121212",
+  "background_color": "#121212",
   "icons": [
     {
       "src": "/assets/images/favicon/web-app-manifest-192x192.png",
@@ -14,8 +18,5 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "theme_color": "#121212",
-  "background_color": "#121212",
-  "display": "standalone"
+  ]
 }
