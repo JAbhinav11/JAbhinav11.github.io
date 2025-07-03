@@ -106,15 +106,19 @@
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
           <figure id="thumbnail" class="avatar-box">
-            <img src="/bundles/images/jabhinav11_pic.jpg"
-                 alt="Abhinav Jaiswal Picture"
-                 width="80"
-                 style="object-fit: cover; aspect-ratio: 1; object-position: center 10%; transform: scale(1.1);
-                 filter:grayscale(10%) saturate(0.9) opacity(0.9); transition:filter 0.5s ease, opacity 0.5s ease;"
-                 onmouseover="this.style.filter='none'; this.style.opacity='1';"
-                 onmouseout="this.style.filter='grayscale(20%) saturate(0.8) opacity(0.9)';"
-                 data-popup-image
-            />
+            <picture>
+              <source srcset="/bundles/images/jabhinav11_pic.webp" type="image/webp">
+              <img
+                      src="/bundles/images/jabhinav11_pic.jpg"
+                      alt="Abhinav Jaiswal Picture"
+                      width="80"
+                      style="object-fit: cover; aspect-ratio: 1; object-position: center 10%; transform: scale(1.1);
+                      filter: grayscale(10%) saturate(0.9) opacity(0.9); transition: filter 0.5s ease, opacity 0.5s ease;"
+                      onmouseover="this.style.filter='none'; this.style.opacity='1';"
+                      onmouseout="this.style.filter='grayscale(20%) saturate(0.8) opacity(0.9)';"
+                      data-popup-image
+              />
+            </picture>
           </figure>
           <div class="info-content courgette-head">
             <h1 class="name" title="Abhinav Jaiswal">Abhinav Jaiswal</h1>
@@ -729,23 +733,33 @@
               </ul>
             </div>
             <div class="qr-box">
-              <img
-                      loading="lazy"
-                      src="/bundles/images/vcard-qr.jpg"
-                      alt="Scan this QR to download Abhinav's contact card"
-                      class="qr-image desktop-only"
-                      style="box-shadow: 3px 3px 7px rgba(0, 0, 0, 1); opacity: 0.7;"
-                      data-popup-image
-              >
-
-              <a href="/bundles/files/vcard/Abhinav.vcf" download>
+              <!-- Desktop-only QR Code Image -->
+              <picture class="desktop-only">
+                <source srcset="/bundles/images/extras/vcard-qr.webp" type="image/webp">
                 <img
                         loading="lazy"
-                        src="/bundles/images/vcard-downloader.png"
-                        alt="Tap to download Abhinav’s contact card (vCard format)"
-                        class="qr-image mobile-only"
-                        style="box-shadow: 3px 3px 7px rgba(0, 0, 0, 1);"
+                        src="/bundles/images/extras/vcard-qr.jpg"
+                        alt="Scan this QR to download Abhinav's contact card"
+                        class="qr-image"
+                        style="box-shadow: 3px 3px 7px rgba(0, 0, 0, 1); opacity: 0.7;"
+                        decoding="async"
+                        fetchpriority="low"
+                        data-popup-image
                 >
+              </picture>
+
+              <!-- Mobile-only vCard Downloader Image -->
+              <a href="/bundles/files/vcard/Abhinav.vcf" download>
+                <picture class="mobile-only">
+                  <source srcset="/bundles/images/extras/vcard-downloader.webp" type="image/webp">
+                  <img
+                          loading="lazy"
+                          src="/bundles/images/extras/vcard-downloader.png"
+                          alt="Tap to download Abhinav’s contact card (vCard format)"
+                          class="qr-image"
+                          style="box-shadow: 3px 3px 7px rgba(0, 0, 0, 1);"
+                  >
+                </picture>
               </a>
             </div>
           </section>
