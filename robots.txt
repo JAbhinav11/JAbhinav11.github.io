@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://iabhinav.me/sitemap.xml
+Sitemap: https://iabhinav.me/image-sitemap.xml
