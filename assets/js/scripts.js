@@ -495,7 +495,9 @@ document.addEventListener("click", function (e) {
   const target = e.target;
   if (target.matches("[data-popup-image]")) {
     const src = target.currentSrc;
+    const alt = target.alt;
     popupImg.setAttribute("src", src);
+    popupImg.setAttribute("alt", alt);
     popup.classList.add("show");
   }
 });
@@ -504,8 +506,17 @@ function hidePopup() {
   popup.classList.remove("show");
   setTimeout(() => {
     popupImg.removeAttribute("src");
+    popupImg.removeAttribute("alt");
   }, 500); // Delay before clearing image
 }
+
+document.addEventListener("keydown", function (e) {
+  if ((e.key === "Escape" || e.key === " ")
+      && popup.classList.contains("show")) {
+        e.preventDefault();
+        hidePopup();
+  }
+}, { passive: false });
 
 /**
  * Function to load resume data
@@ -612,7 +623,9 @@ fetch('/assets/files/json/cards.json')
         const cardHTML = `
           <div class="card-wrap">
             <div class="card">
-              <div class="card-bg" style="background-image: url('${card.image}');"></div>
+              <div class="card-bg">
+                <img src="${card.image}" alt="${card.title}" loading="lazy">
+              </div>
               <div class="card-info">
                 <h2>${card.title}</h2>
                 <p>${card.text}</p>
