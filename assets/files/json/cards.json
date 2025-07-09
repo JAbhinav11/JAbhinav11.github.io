@@ -1,22 +1,113 @@
 [
   {
-    "title": "Abhinav",
-    "image": "/assets/images/abhinav/Abhinav.jpg",
-    "text": "Capturing a moment in the life of Abhinav."
+    "title": "Myself",
+    "text": "Candid frames of thought, mood, and soul",
+    "images": [
+      "/assets/images/abhinav/Abhinav.jpg",
+      "/assets/images/gallery/abhinav/ABHINAV_00001.jpg",
+      "/assets/images/gallery/abhinav/ABHINAV_00002.jpg"
+    ]
   },
   {
-    "title": "Beaches",
-    "image": "https://i.postimg.cc/Qd7v6JbM/IMG-6934.jpg",
-    "text": "Golden sands and waves under the coastal sun."
+    "title": "Tide Trails",
+    "text": "Footprints fade, but memories stay with tides",
+    "images": [
+      "/assets/images/gallery/beach/BEACH_00001.jpg",
+      "/assets/images/gallery/beach/BEACH_00002.jpg",
+      "/assets/images/gallery/beach/BEACH_00003.jpg"
+    ]
   },
   {
-    "title": "Trees",
-    "image": "https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?auto=compress&fit=crop&w=1199&h=799&q=80",
-    "text": "A quiet forest bursting with vibrant green life."
+    "title": "Wings in Motion",
+    "text": "Graceful wings soaring through nature’s canvas",
+    "images": [
+      "/assets/images/gallery/birds/BIRDS_00001.jpg",
+      "/assets/images/gallery/birds/BIRDS_00002.jpg",
+      "/assets/images/gallery/birds/BIRDS_00003.jpg",
+      "/assets/images/gallery/birds/BIRDS_00004.jpg",
+      "/assets/images/gallery/birds/BIRDS_00005.jpg",
+      "/assets/images/gallery/birds/BIRDS_00006.jpg"
+    ]
   },
   {
-    "title": "Lakes",
-    "image": "https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?auto=compress&fit=crop&w=1199&h=811&q=80",
-    "text": "Peaceful lake framed by clouds and mountain air."
+    "title": "Spiritual Moments",
+    "text": "Frames of Faith, Devotion, and Inner Peace",
+    "images": [
+      "/assets/images/gallery/divine/DIVINE_00001.jpg",
+      "/assets/images/gallery/divine/DIVINE_00002.jpg",
+      "/assets/images/gallery/divine/DIVINE_00003.jpg"
+    ]
+  },
+  {
+    "title": "Flora & Peace",
+    "text": "Nature’s poetry written in petals and green",
+    "images": [
+      "/assets/images/gallery/flower/FLOWER_00001.jpg",
+      "/assets/images/gallery/flower/FLOWER_00002.jpg",
+      "/assets/images/gallery/flower/FLOWER_00003.jpg",
+      "/assets/images/gallery/flower/FLOWER_00004.jpg",
+      "/assets/images/gallery/flower/FLOWER_00005.jpg",
+      "/assets/images/gallery/flower/FLOWER_00006.jpg",
+      "/assets/images/gallery/flower/FLOWER_00007.jpg"
+    ]
+  },
+  {
+    "title": "Bites & Plates",
+    "text": "Where cravings meet creativity on every plate",
+    "images": [
+      "/assets/images/gallery/food/FOOD_00001.jpg",
+      "/assets/images/gallery/food/FOOD_00002.jpg",
+      "/assets/images/gallery/food/FOOD_00003.jpg",
+      "/assets/images/gallery/food/FOOD_00004.jpg",
+      "/assets/images/gallery/food/FOOD_00005.jpg",
+      "/assets/images/gallery/food/FOOD_00006.jpg",
+      "/assets/images/gallery/food/FOOD_00007.jpg",
+      "/assets/images/gallery/food/FOOD_00008.jpg",
+      "/assets/images/gallery/food/FOOD_00009.jpg",
+      "/assets/images/gallery/food/FOOD_00010.jpg",
+      "/assets/images/gallery/food/FOOD_00011.jpg",
+      "/assets/images/gallery/food/FOOD_00012.jpg",
+      "/assets/images/gallery/food/FOOD_00013.jpg",
+      "/assets/images/gallery/food/FOOD_00014.jpg",
+      "/assets/images/gallery/food/FOOD_00015.jpg",
+      "/assets/images/gallery/food/FOOD_00016.jpg",
+      "/assets/images/gallery/food/FOOD_00017.jpg",
+      "/assets/images/gallery/food/FOOD_00018.jpg",
+      "/assets/images/gallery/food/FOOD_00019.jpg",
+      "/assets/images/gallery/food/FOOD_00020.jpg",
+      "/assets/images/gallery/food/FOOD_00021.jpg"
+    ]
+  },
+  {
+    "title": "After Dark",
+    "text": "Moonlit thoughts painted on a dark canvas",
+    "images": [
+      "/assets/images/gallery/night/NIGHT_00001.jpg",
+      "/assets/images/gallery/night/NIGHT_00002.jpg",
+      "/assets/images/gallery/night/NIGHT_00003.jpg",
+      "/assets/images/gallery/night/NIGHT_00004.jpg",
+      "/assets/images/gallery/night/NIGHT_00005.jpg",
+      "/assets/images/gallery/night/NIGHT_00006.jpg",
+      "/assets/images/gallery/night/NIGHT_00007.jpg",
+      "/assets/images/gallery/night/NIGHT_00008.jpg"
+    ]
+  },
+  {
+    "title": "Above Us",
+    "text": "Chasing clouds like they owe me something",
+    "images": [
+      "/assets/images/gallery/sky/SKY_00001.jpg",
+      "/assets/images/gallery/sky/SKY_00002.jpg",
+      "/assets/images/gallery/sky/SKY_00003.jpg",
+      "/assets/images/gallery/sky/SKY_00004.jpg",
+      "/assets/images/gallery/sky/SKY_00005.jpg",
+      "/assets/images/gallery/sky/SKY_00006.jpg",
+      "/assets/images/gallery/sky/SKY_00007.jpg",
+      "/assets/images/gallery/sky/SKY_00008.jpg",
+      "/assets/images/gallery/sky/SKY_00009.jpg",
+      "/assets/images/gallery/sky/SKY_00010.jpg",
+      "/assets/images/gallery/sky/SKY_00011.jpg",
+      "/assets/images/gallery/sky/SKY_00012.jpg"
+    ]
   }
 ]

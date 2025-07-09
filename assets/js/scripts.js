@@ -308,11 +308,6 @@ sidebarBtn.addEventListener("click", function () {
   elementToggleFunc(sidebar);
 });
 
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const overlay = document.querySelector("[data-overlay]");
-const testimonialImg = document.querySelector("[data-testimonials-avatar]");
-
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -368,6 +363,7 @@ const dataForm = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 const emailInput = dataForm.querySelector('input[type="email"]');
+const fileInput = document.getElementById("file-upload");
 
 // Function to check overall form validity
 function validateForm() {
@@ -382,6 +378,42 @@ function validateForm() {
   }
 }
 
+const fileLabelText = document.getElementById("file-label-text");
+const removeFileBtn = document.getElementById("remove-file-btn");
+
+fileInput.addEventListener("change", function () {
+  const file = fileInput.files[0];
+
+  if (file) {
+    if (file.type !== "application/pdf") {
+      alert("Only PDF files are allowed.");
+      fileInput.value = "";
+      fileLabelText.textContent = "Attach PDF (Optional)";
+      removeFileBtn.style.display = "none";
+    } else if (file.size > 1 * 1024 * 1024) {
+      alert("File must be under 1MB.");
+      fileInput.value = "";
+      fileLabelText.textContent = "Attach PDF (Optional)";
+      removeFileBtn.style.display = "none";
+    } else {
+      fileLabelText.textContent = file.name.length > 30
+        ? file.name.substring(0, 27) + "..."
+        : file.name;
+      removeFileBtn.style.display = "inline-block";
+    }
+  } else {
+    fileLabelText.textContent = "Attach PDF (Optional)";
+    removeFileBtn.style.display = "none";
+  }
+});
+
+// Handle remove button click
+removeFileBtn.addEventListener("click", function () {
+  fileInput.value = "";
+  fileLabelText.textContent = "Attach PDF (Optional)";
+  removeFileBtn.style.display = "none";
+});
+
 // Add input event listener to each form input
 formInputs.forEach(input => {
   input.addEventListener("input", validateForm);
@@ -393,45 +425,82 @@ validateForm();
 // Handle form submission
 const form = document.getElementById("contact-form");
 const button = form.querySelector("button");
+const buttonSpan = button.querySelector("span");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   button.disabled = true;
-  button.querySelector("span").textContent = "Sending . . .";
+  buttonSpan.textContent = "Sending. . .";
 
   grecaptcha.ready(function () {
     grecaptcha.execute("6LfdbHArAAAAAPeDLaw6tVOunsir0DJs14gteGKi", { action: "submit" }).then(async function (token) {
       const formData = new FormData(form);
+
+      // Add file if selected
+      const file = fileInput.files[0];
+      if (file) {
+        const base64 = await toBase64(file);
+        formData.append("fileData", base64);
+        formData.append("fileName", file.name);
+      }
 
       const isMobile = /Mobile|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       formData.append("deviceType", isMobile ? "Mobile" : "Desktop");
       formData.append("g-recaptcha-response", token);
 
       try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbzY44QUQgMtOanfoBLAMjiqxFJm8rqBdFseUkwOpR_nItUX5LQ0j9mcx4L_pZgo33o2/exec", {
+        const response = await fetch("https://script.google.com/macros/s/AKfycby-Myrg_bQgqdEuHblYGBiCV71etFbFQpEELnBXCimhe-C56_IGM8ZnwrNsShZoWdkk/exec", {
           method: "POST",
           body: formData
         });
-
+        console.log("response: ", response);
         if (response.ok) {
-          alert("Thank you! Your message has been sent.");
-          form.reset();
-          validateForm(); // Re-check form after reset
+          const result = await response.json();
+          console.log("Google Script Response: ", result);
+
+          if (result.status === "success") {
+            showToast("success", "Thank you! Your message has been sent.");
+            form.reset(); resetFileUploadUI(); validateForm();
+          } else {
+            if (result.message.includes("reCAPTCHA failed")) {
+                showToast("warning", "reCAPTCHA flagged this as suspicious. Please refresh and try again.");
+            } else if (result.message.includes("Missing reCAPTCHA token")) {
+                showToast("warning", "Submission failed. Please refresh and try again.");
+            } else {
+                showToast("error", "Error: Could not send the message.");
+            }
+          }
         } else {
-          alert("Error: Could not send form.");
+          showToast("error", "Error: Could not send the message.");
         }
       } catch (error) {
         console.error("Submission error:", error);
-        alert("Something went wrong.");
+        showToast("error", "Something went wrong. Please contact us at hello@iabhinav.me");
       } finally {
-        button.disabled = false;
-        button.querySelector("span").textContent = "Send Message";
+        buttonSpan.textContent = "Send Message";
       }
     });
   });
 });
 
+function resetFileUploadUI() {
+  fileInput.value = "";
+  fileLabelText.textContent = "Attach PDF (Optional)";
+  removeFileBtn.style.display = "none";
+}
+
+function toBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        const base64String = reader.result.split(",")[1];
+        resolve(base64String);
+      };
+      reader.onerror = reject;
+    });
+ }
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -476,16 +545,6 @@ const startYear = 2018;
 const currentYear = new Date().getFullYear();
 const experienceYears = currentYear - startYear;
 document.getElementById("experience-years").textContent = `+${experienceYears}`;
-
-//// display popup image
-//const thumbnail = document.getElementById('thumbnail');
-//const popup = document.getElementById('popup');
-//thumbnail.addEventListener('click', () => {
-//  popup.classList.add('show');
-//});
-//function hidePopup() {
-//  popup.classList.remove('show');
-//}
 
 // Generic image popup logic
 const popup = document.getElementById("popup");
@@ -613,62 +672,217 @@ document.addEventListener('DOMContentLoaded', function () {
   loadResumeData();
 });
 
-// load the cards in gallery
+function applyCardTiltEffect() {
+document.querySelectorAll('.card-wrap').forEach(cardWrap => {
+  const card = cardWrap.querySelector('.card');
+  const bg = cardWrap.querySelector('.card-bg');
+
+  cardWrap.addEventListener('mousemove', e => {
+    const rect = cardWrap.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -15;
+    const rotateY = ((x - centerX) / centerX) * 15;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+    const bgTranslateX = ((x - centerX) / centerX) * -15;
+    const bgTranslateY = ((y - centerY) / centerY) * -15;
+    bg.style.transform = `translate(${bgTranslateX}px, ${bgTranslateY}px) scale(1.11)`;
+  });
+
+  cardWrap.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    bg.style.transform = 'translate(0, 0)';
+  });
+});
+}
+
+const galleryPopup = document.getElementById("gallery-popup");
+const popupImage = document.getElementById("popup-image");
+const popupClose = document.getElementById("popup-close-btn");
+const prevBtn = document.querySelector(".popup-prev");
+const nextBtn = document.querySelector(".popup-next");
+
+let galleryData = [];
+let currentCardIndex = 0;
+let currentImageIndex = 0;
+
 fetch('/assets/files/json/cards.json')
-    .then(response => response.json())
-    .then(cardsData => {
-      const container = document.getElementById('cardContainer');
+  .then(response => response.json())
+  .then(cardsData => {
+    galleryData = cardsData;
+    renderGallery(cardsData);
+    updateNavigationHint();
+  });
 
-      cardsData.forEach(card => {
-        const cardHTML = `
-          <div class="card-wrap">
-            <div class="card">
-              <div class="card-bg">
-                <img src="${card.image}" alt="${card.title}" loading="lazy">
-              </div>
-              <div class="card-info">
-                <h2>${card.title}</h2>
-                <p>${card.text}</p>
-              </div>
-            </div>
+function renderGallery(cardsData) {
+  const container = document.getElementById('cardContainer');
+  container.innerHTML = '';
+
+  cardsData.forEach((card, index) => {
+    const originalImg = card.images[0];
+    const webpImg = originalImg.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+
+    const cardHTML = `
+      <div class="card-wrap" data-card-index="${index}">
+        <div class="card">
+          <div class="card-bg">
+            <picture>
+              <source srcset="${webpImg}" type="image/webp">
+              <img src="${originalImg}" alt="${card.title}" loading="lazy" />
+            </picture>
           </div>
-        `;
-        container.insertAdjacentHTML('beforeend', cardHTML);
-      });
+          <div class="card-info">
+            <h2>${card.title}</h2>
+            <p>${card.text}</p>
+          </div>
+        </div>
+      </div>
+    `;
+    container.insertAdjacentHTML('beforeend', cardHTML);
+  });
 
-      // Add tilt effect after rendering cards
-      applyCardTiltEffect();
+  // Add tilt effect after rendering cards
+  applyCardTiltEffect();
+
+  document.querySelectorAll('.card-wrap').forEach(card => {
+    card.addEventListener('click', () => {
+      currentCardIndex = parseInt(card.getAttribute('data-card-index'));
+      currentImageIndex = 0;
+      showPopupImage();
     });
+  });
+}
 
-  function applyCardTiltEffect() {
-    document.querySelectorAll('.card-wrap').forEach(cardWrap => {
-      const card = cardWrap.querySelector('.card');
-      const bg = cardWrap.querySelector('.card-bg');
+function showPopupImage() {
+  const currentCard = galleryData[currentCardIndex];
+  const imageList = currentCard.images;
 
-      cardWrap.addEventListener('mousemove', e => {
-        const rect = cardWrap.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+  const originalImg = imageList[currentImageIndex];
+  const webpImg = originalImg.replace(/\.(jpg|jpeg|png)$/i, '.webp');
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+  // Check if browser supports WebP
+  const canUseWebP = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+  popupImage.src = canUseWebP ? webpImg : originalImg;
 
-        const rotateX = ((y - centerY) / centerY) * -15;
-        const rotateY = ((x - centerX) / centerX) * 15;
+  galleryPopup.classList.add("show");
+  document.body.style.overflow = "hidden";
+  updateNavigationHint();
+}
 
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+function hidePopupImage() {
+  galleryPopup.classList.remove("show");
+  popupImage.src = "";
+  document.body.style.overflow = "";
+}
 
-        const bgTranslateX = ((x - centerX) / centerX) * -15;
-        const bgTranslateY = ((y - centerY) / centerY) * -15;
-        bg.style.transform = `translate(${bgTranslateX}px, ${bgTranslateY}px) scale(1.1)`;
-      });
+function nextImage() {
+  const images = galleryData[currentCardIndex].images;
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  showPopupImage();
+}
 
-      cardWrap.addEventListener('mouseleave', () => {
-        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-        bg.style.transform = 'translate(0, 0)';
-      });
-    });
+function prevImage() {
+  const images = galleryData[currentCardIndex].images;
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  showPopupImage();
+}
+
+// Controls
+popupClose.addEventListener("click", hidePopupImage);
+nextBtn.addEventListener("click", nextImage);
+prevBtn.addEventListener("click", prevImage);
+
+document.addEventListener("keydown", e => {
+  if (!galleryPopup.classList.contains("show")) return;
+  if (e.code === "Escape" || e.code === "Space") {
+      e.preventDefault();
+      hidePopupImage();
   }
+  if (e.key === "ArrowRight" || e.key.toLowerCase() === "n") nextImage();
+  if (e.key === "ArrowLeft" || e.key.toLowerCase() === "p") prevImage();
+}, { passive: false });
+
+// Mobile swipe for cards
+let touchStartX = 0;
+
+galleryPopup.addEventListener("touchstart", e => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+galleryPopup.addEventListener("touchend", e => {
+  const touchEndX = e.changedTouches[0].screenX;
+  const diff = touchStartX - touchEndX;
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) nextImage();
+    else prevImage();
+  }
+});
+
+document.getElementById("gallery-popup").addEventListener("click", (e) => {
+  const popupInner = document.querySelector(".popup-inner");
+  if (!popupInner.contains(e.target)) {
+    hidePopupImage();
+  }
+});
+
+function updateNavigationHint() {
+  const keysHint = document.querySelector(".keys");
+  if (!keysHint) return;
+  const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+  keysHint.textContent = isTouchDevice
+      ? "Swipe left/right to navigate"
+      : "Use ← and → keys to navigate";
+}
+
+
+const toastThemes = {
+  success: { icon: "checkmark-done-outline", glow: "rgba(0,255,0,0.5)", shadow: "0px 0px 10px 3px rgba(0, 255, 0, 0.1)" },
+  error: { icon: "close-outline", glow: "rgba(255,0,0,0.5)", shadow: "0px 0px 10px 3px rgba(255, 0, 0, 0.1)" },
+  warning: { icon: "alert-outline", glow: "rgba(255,165,0,0.5)", shadow: "0px 0px 10px 3px rgba(255, 165, 0, 0.1)" },
+  info: { icon: "information", glow: "rgba(0,123,255,0.5)", shadow: "0px 0px 10px 3px rgba(0, 123, 255, 0.1)" },
+  default: { icon: "accessibility-outline", glow: "rgba(255,255,255,0.5)", shadow: "0px 0px 10px 3px rgba(255, 255, 255, 0.1)" }
+};
+
+function showToast(status = "default", message = "") {
+  const container = document.getElementById("toast-container");
+  if (!container) return;
+
+  const { icon, glow, shadow } = toastThemes[status] || toastThemes.default;
+
+  const toast = document.createElement("div");
+  toast.className = "toast professional";
+
+  const iconElem = document.createElement("ion-icon");
+  iconElem.setAttribute("name", icon);
+
+  const text = document.createElement("span");
+  text.textContent = message;
+
+  const glowElem = document.createElement("div");
+  glowElem.className = "toast-glow";
+  glowElem.style.background = `radial-gradient(circle, ${glow}, transparent 70%)`;
+
+  toast.append(iconElem, text, glowElem);
+	toast.classList.add(status);
+	toast.style.boxShadow = shadow;
+  container.appendChild(toast);
+
+  toast.onclick = () => {
+    toast.classList.add("fade-out");
+    setTimeout(() => toast.remove(), 500);
+  };
+
+  setTimeout(() => {
+		toast.classList.add("fade-out");
+		setTimeout(() => toast.remove(), 500);
+	}, 6500);
+}
 
 //// Call the function with different lists and container IDs
 //createButtonListWithIcon(

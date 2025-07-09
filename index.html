@@ -49,9 +49,9 @@
     <link rel="preload" href="/assets/images/abhinav/Abhinav.webp" as="image" type="image/webp">
 
     <!--- Styles and JS -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="preload" href="/assets/js/scripts.js" as="script">
-    <script src="/assets/js/scripts.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <link rel="preload" href="/assets/js/scripts.min.js" as="script">
+    <script src="/assets/js/scripts.min.js" defer></script>
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -297,7 +297,7 @@
         <!--- #ABOUT -->
         <article class="about active" data-page="about">
           <header>
-            <h2 class="h2 article-title">About me</h2>
+            <h2 class="h2 article-title">Digital Identity</h2>
           </header>
           <section class="about-text">
             <p>
@@ -337,7 +337,7 @@
         <!--- #RESUME -->
         <article class="resume" data-page="resume">
           <header>
-            <h2 class="h2 article-title">Resume</h2>
+            <h2 class="h2 article-title">Career Snapshot</h2>
           </header>
 
           <!-- Experience Section -->
@@ -378,7 +378,7 @@
         <!--- #EXPERTISE -->
         <article class="expertise" data-page="expertise">
           <header>
-            <h2 class="h2 article-title">Tech Expertise</h2>
+            <h2 class="h2 article-title">What I Do Best</h2>
           </header>
           <section class="timeline">
             <div class="title-wrapper">
@@ -467,7 +467,7 @@
         <!--- #PORTFOLIO -->
         <article class="portfolio" data-page="portfolio">
           <header>
-            <h2 class="h2 article-title">Portfolio</h2>
+            <h2 class="h2 article-title">Crafted with Code</h2>
           </header>
           <section class="projects">
             <ul class="filter-list">
@@ -719,7 +719,7 @@
         <!--- #CONTACT -->
         <article class="contact" data-page="contact">
           <header>
-            <h2 class="h2 article-title">Contact Me</h2>
+            <h2 class="h2 article-title">Get in Touch</h2>
           </header>
           <section class="mapbox" data-mapbox>
             <figure>
@@ -791,11 +791,31 @@
                   <input type="text" name="name" class="form-input" placeholder="Full Name" required data-form-input autocomplete="name" />
                   <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input autocomplete="email" />
                 </div>
+
                 <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input autocomplete="off"></textarea>
-                <p> This site is protected by reCAPTCHA and the Google
+
+                <!-- PDF Upload Field -->
+                <div class="upload-wrapper">
+                  <label for="file-upload" class="upload-btn">
+                    <ion-icon name="attach"></ion-icon>
+                    <span id="file-label-text">Attach PDF (Optional)</span>
+                  </label>
+
+                  <input type="file" id="file-upload" name="file" accept=".pdf" />
+
+                  <div class="upload-meta">
+                    <small class="upload-hint">Only PDF files up to 1 MB</small>
+                    <span id="remove-file-btn" style="display: none;" class="remove-file-btn">
+                      Remove PDF
+                    </span>
+                  </div>
+                </div>
+
+                <p>This site is protected by reCAPTCHA and the Google
                   <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and
                   <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.
                 </p>
+
                 <button class="form-btn" type="submit" disabled data-form-btn>
                   <ion-icon name="paper-plane"></ion-icon>
                   <span>Send Message</span>
@@ -803,6 +823,7 @@
               </form>
             </div>
           </section>
+
         </article>
 
         <!--- #GALLERY -->
@@ -816,6 +837,19 @@
         </article>
       </div>
     </main>
+
+    <div id="gallery-popup">
+      <div class="popup-inner">
+        <img id="popup-image" src="" alt="">
+        <button id="popup-close-btn" aria-label="Close popup">✕</button>
+        <span class="popup-nav-btn popup-prev">&#x276C;</span>
+        <span class="popup-nav-btn popup-next">&#x276D;</span>
+      </div>
+      <div class="keys">Use ← and → keys to navigate</div>
+    </div>
+
+    <div id="toast-container"></div>
+
 
     <!--- ionicon link -->
     <script
