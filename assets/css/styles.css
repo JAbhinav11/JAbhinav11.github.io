@@ -2354,7 +2354,7 @@ footer {
 
   .sidebar {
     position: sticky;
-    top: 30px;
+    top: 50px;
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;

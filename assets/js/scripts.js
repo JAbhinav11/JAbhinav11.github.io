@@ -1,5 +1,7 @@
 "use strict";
 
+const pageLoadTime = Date.now();
+
 // element toggle function
 const elementToggleFunc = function (elem) {
   elem.classList.toggle("active");
@@ -445,12 +447,11 @@ form.addEventListener("submit", function (e) {
         formData.append("fileName", file.name);
       }
 
-      const isMobile = /Mobile|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      formData.append("deviceType", isMobile ? "Mobile" : "Desktop");
       formData.append("g-recaptcha-response", token);
+      await appendTrackingData(formData);
 
       try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycby-Myrg_bQgqdEuHblYGBiCV71etFbFQpEELnBXCimhe-C56_IGM8ZnwrNsShZoWdkk/exec", {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbxD8-0WMFNDwuZYEX5j67Nt2nl8gge2dF1qYZy10a2AIrIVkSD5_1YfzD8eOLE0oA8B/exec", {
           method: "POST",
           body: formData
         });
@@ -484,6 +485,20 @@ form.addEventListener("submit", function (e) {
   });
 });
 
+async function appendTrackingData(formData) {
+  formData.append("userAgent", navigator.userAgent);
+  const isMobile = /Mobile|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  formData.append("deviceType", isMobile ? "Mobile" : "Desktop");
+  formData.append("referrer", document.referrer || "Direct");
+  formData.append("pageUrl", window.location.href);
+  const ip = await getIPFromIpify();
+  if (ip) { formData.append("ipAddress", ip); }
+  const ipData = await getIPInfo();
+  if (ipData) { formData.append("ipInfo", JSON.stringify(ipData)); }
+  const timeSpent = Math.round((Date.now() - pageLoadTime) / 1000);
+  formData.append("timeSpentSeconds", timeSpent);
+}
+
 function resetFileUploadUI() {
   fileInput.value = "";
   fileLabelText.textContent = "Attach PDF (Optional)";
@@ -501,6 +516,24 @@ function toBase64(file) {
       reader.onerror = reject;
     });
  }
+
+async function getIPFromIpify() {
+  try {
+    const response = await fetch("https://api.ipify.org/?format=json");
+    const data = await response.json();
+    if (data && data.ip) return data.ip;
+  } catch (_) {}
+  return null;
+}
+
+async function getIPInfo() {
+  try {
+    const response = await fetch("https://ipwho.is/?fields=ip,country,city,region,latitude,longitude");
+    const ipData = await response.json();
+    if (ipData.success !== false) return ipData;
+  } catch (_) {}
+  return null;
+}
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
