@@ -428,9 +428,12 @@ validateForm();
 const form = document.getElementById("contact-form");
 const button = form.querySelector("button");
 const buttonSpan = button.querySelector("span");
+let isSubmitting = false;
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  if (isSubmitting) return; // Prevent multiple submissions
+  isSubmitting = true; // Set flag to prevent further submissions
+  e.preventDefault(); // Prevent default form submission
 
   button.disabled = true;
   buttonSpan.textContent = "Sending. . .";
@@ -451,7 +454,7 @@ form.addEventListener("submit", function (e) {
       await appendTrackingData(formData);
 
       try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbxD8-0WMFNDwuZYEX5j67Nt2nl8gge2dF1qYZy10a2AIrIVkSD5_1YfzD8eOLE0oA8B/exec", {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbztW70k-EIucm51OhnTZ3O-rKLwmeNvNpsjEaT5uEBZrScemODzwirDyQo3bJLZ0k4c/exec", {
           method: "POST",
           body: formData
         });
@@ -469,17 +472,18 @@ form.addEventListener("submit", function (e) {
             } else if (result.message.includes("Missing reCAPTCHA token")) {
                 showToast("warning", "Submission failed. Please refresh and try again.");
             } else {
-                showToast("error", "Error: Could not send the message.");
+                showToast("error", "Error: Could not send the message. Please try again after sometime.");
             }
           }
         } else {
-          showToast("error", "Error: Could not send the message.");
+          showToast("error", "Error: Could not send the message. Please try again after sometime.");
         }
       } catch (error) {
         console.error("Submission error:", error);
         showToast("error", "Something went wrong. Please contact us at hello@iabhinav.me");
       } finally {
         buttonSpan.textContent = "Send Message";
+        isSubmitting = false;
       }
     });
   });
@@ -803,6 +807,9 @@ function showPopupImage() {
   const canUseWebP = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
   popupImage.src = canUseWebP ? webpImg : originalImg;
 
+  const watermarkEl = document.querySelector('.watermark');
+  watermarkEl.textContent = currentCard.title;
+
   galleryPopup.classList.add("show");
   document.body.style.overflow = "hidden";
   updateNavigationHint();
@@ -896,6 +903,7 @@ function showToast(status = "default", message = "") {
 
   const text = document.createElement("span");
   text.textContent = message;
+  text.innerHTML = message.replace(/\n/g, "<br>");
 
   const glowElem = document.createElement("div");
   glowElem.className = "toast-glow";
