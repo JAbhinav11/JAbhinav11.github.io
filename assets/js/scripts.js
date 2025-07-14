@@ -436,8 +436,8 @@ form.addEventListener("submit", function (e) {
   e.preventDefault(); // Prevent default form submission
 
   button.disabled = true;
-  form.classList.add("sending");
   button.classList.add("loading");
+  form.classList.add("sending");
 
   grecaptcha.ready(function () {
     grecaptcha.execute("6LfdbHArAAAAAPeDLaw6tVOunsir0DJs14gteGKi", { action: "submit" }).then(async function (token) {
@@ -488,6 +488,7 @@ form.addEventListener("submit", function (e) {
           showToast("error", "Something went wrong. Please contact us at hello@iabhinav.me");
         }
       } finally {
+        form.classList.remove("sending");
         button.classList.remove("loading");
         isSubmitting = false;
         validateForm();
