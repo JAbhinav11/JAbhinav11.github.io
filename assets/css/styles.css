@@ -1405,6 +1405,62 @@ textarea.form-input::-webkit-resizer {
   color: var(--bittersweet-shimmer);
 }
 
+.form-btn .content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.pulse-loader {
+  position: absolute;
+  display: flex;
+  gap: 7px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pulse-loader span {
+  width: 5px;
+  height: 6px;
+  background: var(--sky-blue-crayola);;
+  border-radius: 50%;
+  animation: rippleDot 1.2s infinite ease-in-out;
+  opacity: 0.6;
+}
+
+@keyframes rippleDot {
+  0% { transform: scale(0.5); opacity: 0.4; }
+  50% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(0.5); opacity: 0.4; }
+}
+
+.pulse-loader span:nth-child(1)  { animation-delay: 0s; }
+.pulse-loader span:nth-child(2)  { animation-delay: 0.1s; }
+.pulse-loader span:nth-child(3)  { animation-delay: 0.2s; }
+.pulse-loader span:nth-child(4)  { animation-delay: 0.3s; }
+.pulse-loader span:nth-child(5)  { animation-delay: 0.4s; }
+.pulse-loader span:nth-child(6)  { animation-delay: 0.5s; }
+.pulse-loader span:nth-child(7)  { animation-delay: 0.6s; }
+.pulse-loader span:nth-child(8)  { animation-delay: 0.7s; }
+.pulse-loader span:nth-child(9)  { animation-delay: 0.8s; }
+.pulse-loader span:nth-child(10) { animation-delay: 0.9s; }
+.pulse-loader span:nth-child(11) { animation-delay: 1s; }
+
+
+.form-btn.loading .content {
+  opacity: 0;
+}
+
+.form-btn.loading .pulse-loader {
+  opacity: 1;
+}
+
+.form.sending {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
 
 [data-popup-image] {
   cursor: pointer;
@@ -1754,11 +1810,11 @@ footer {
     font-size: 1.5rem;
     text-shadow: 0 0 20px rgba(255, 255, 255, 1);
     font-family: 'Courgette';
-    background: black;
+    background: rgba(0, 0, 0, 0.5);
     color: white;
-    box-shadow: 0px 0px 30px 30px rgb(0 0 0 / 100%);
-    opacity: 0.3;
-    animation: fade 3s linear(0 0%, 0 50%, 0.1 70%, 0.2 85%, 0.3 100%);
+    box-shadow: 0px 0px 30px 30px rgb(0 0 0 / 50%);
+    opacity: 0.2;
+    animation: fade 3s linear(0 0%, 0 50%, 0.07 70%, 0.15 85%, 0.2 100%);
     pointer-events: none;
     user-select: none;
 }
@@ -2194,7 +2250,7 @@ footer {
   }
 
   .form-btn {
-    width: max-content;
+    width: 13rem;
     margin-left: auto;
   }
 

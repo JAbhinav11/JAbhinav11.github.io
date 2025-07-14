@@ -435,8 +435,10 @@ form.addEventListener("submit", function (e) {
   isSubmitting = true; // Set flag to prevent further submissions
   e.preventDefault(); // Prevent default form submission
 
-  button.disabled = true;
-  buttonSpan.textContent = "Sending. . .";
+  const allFormElements = form.querySelectorAll("input, textarea, button");
+  allFormElements.forEach(el => el.disabled = true);
+  form.classList.add("sending");
+  button.classList.add("loading");
 
   grecaptcha.ready(function () {
     grecaptcha.execute("6LfdbHArAAAAAPeDLaw6tVOunsir0DJs14gteGKi", { action: "submit" }).then(async function (token) {
@@ -458,32 +460,40 @@ form.addEventListener("submit", function (e) {
           method: "POST",
           body: formData
         });
-        console.log("response: ", response);
+        console.log("Response: ", response);
         if (response.ok) {
           const result = await response.json();
-          console.log("Google Script Response: ", result);
 
           if (result.status === "success") {
             showToast("success", "Thank you! Your message has been sent.");
-            form.reset(); resetFileUploadUI(); validateForm();
+            form.reset(); resetFileUploadUI();
           } else {
             if (result.message.includes("reCAPTCHA failed")) {
                 showToast("warning", "reCAPTCHA flagged this as suspicious. Please refresh and try again.");
             } else if (result.message.includes("Missing reCAPTCHA token")) {
                 showToast("warning", "Submission failed. Please refresh and try again.");
             } else {
-                showToast("error", "Error: Could not send the message. Please try again after sometime.");
+                showToast("error", "Unable to send your message. Please try again.");
             }
           }
         } else {
-          showToast("error", "Error: Could not send the message. Please try again after sometime.");
+          showToast("error", "Network error. Unable to connect to the server.");
         }
       } catch (error) {
         console.error("Submission error:", error);
-        showToast("error", "Something went wrong. Please contact us at hello@iabhinav.me");
+        if (error.message.includes("network")) {
+          showToast("error", "Network issue. Please check your internet and try again.");
+        } else if (error.message.includes("timeout")) {
+          showToast("error", "The request timed out. Please try again shortly.");
+        } else {
+          showToast("error", "Something went wrong. Please contact us at hello@iabhinav.me");
+        }
       } finally {
-        buttonSpan.textContent = "Send Message";
+        button.classList.remove("loading");
+        form.classList.remove("sending");
+        allFormElements.forEach(el => el.disabled = false);
         isSubmitting = false;
+        validateForm();
       }
     });
   });

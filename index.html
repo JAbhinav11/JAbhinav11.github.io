@@ -49,9 +49,9 @@
     <link rel="preload" href="/assets/images/abhinav/Abhinav.webp" as="image" type="image/webp">
 
     <!--- Styles and JS -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="preload" href="/assets/js/scripts.js" as="script">
-    <script src="/assets/js/scripts.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <link rel="preload" href="/assets/js/scripts.min.js" as="script">
+    <script src="/assets/js/scripts.min.js" defer></script>
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -818,9 +818,17 @@
                 </p>
 
                 <button class="form-btn" type="submit" disabled data-form-btn>
-                  <ion-icon name="paper-plane"></ion-icon>
-                  <span>Send Message</span>
+                  <div class="content">
+                    <ion-icon name="paper-plane" class="icon"></ion-icon>
+                    <span class="btn-label">Send Message</span>
+                  </div>
+                  <div class="pulse-loader">
+                    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+                    <span></span> <span></span> <span></span> <span></span> <span></span>
+                  </div>
                 </button>
+
+
               </form>
             </div>
           </section>
