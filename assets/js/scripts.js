@@ -435,8 +435,7 @@ form.addEventListener("submit", function (e) {
   isSubmitting = true; // Set flag to prevent further submissions
   e.preventDefault(); // Prevent default form submission
 
-  const allFormElements = form.querySelectorAll("input, textarea, button");
-  allFormElements.forEach(el => el.disabled = true);
+  button.disabled = true;
   form.classList.add("sending");
   button.classList.add("loading");
 
@@ -490,8 +489,6 @@ form.addEventListener("submit", function (e) {
         }
       } finally {
         button.classList.remove("loading");
-        form.classList.remove("sending");
-        allFormElements.forEach(el => el.disabled = false);
         isSubmitting = false;
         validateForm();
       }
