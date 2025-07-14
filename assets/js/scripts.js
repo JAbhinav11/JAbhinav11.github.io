@@ -454,7 +454,7 @@ form.addEventListener("submit", function (e) {
       await appendTrackingData(formData);
 
       try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbztW70k-EIucm51OhnTZ3O-rKLwmeNvNpsjEaT5uEBZrScemODzwirDyQo3bJLZ0k4c/exec", {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbx950TFO1DbPxrsRHfaMWq-qboyrRy1QRLsL-94UwLg04hTGPkCpB5nhlHxHlSARgBY/exec", {
           method: "POST",
           body: formData
         });
